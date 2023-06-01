@@ -5,36 +5,26 @@ import 'package:flutter_application_1/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    // num number = 20; // can take int as well as decimal
-    // var day = "Tuesday"; // can take any kind of value
-    //double pi = 3.14;
-    //const pi = 3.14;
-    //final
-
     return MaterialApp(
-      //   home: HomePage(),
       themeMode: ThemeMode.light,
       theme: ThemeData(
-        primarySwatch: Colors.cyan,
+        primarySwatch: Colors.deepPurple,
         fontFamily: GoogleFonts.lato().fontFamily,
       ),
-      debugShowCheckedModeBanner: true,
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
-      initialRoute: "/login",
+      initialRoute: "/",
       routes: {
-        "/": (context) => const HomePage(),
-        MyRoutes.homeRoute: (context) => const HomePage(),
-        MyRoutes.loginRoute: (context) => const LoginPage()
+        "/": (context) => LoginPage(),
+        MyRoutes.homeRoute: (context) => HomePage(),
+        MyRoutes.loginRoute: (context) => LoginPage()
       },
     );
   }
